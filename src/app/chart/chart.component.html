@@ -1,0 +1,9 @@
+<div class="chart-container">
+  <select (change)="updateChartDate($event)">
+    <option value="-1">All Time</option>
+    <option value="1">Last Month</option>
+    <option value="4">Last Quarter</option>
+    <option value="12">Last Year</option>
+  </select>
+  <canvas #MyChart></canvas>
+</div>

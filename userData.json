@@ -1,0 +1,88 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "hasLoyalty": false,
+      "ticketSize": 10,
+      "date": "2020-05-10"
+    },
+    {
+      "id": 2,
+      "hasLoyalty": false,
+      "ticketSize": 15,
+      "date": "2020-09-10"
+    },
+    {
+      "id": 3,
+      "hasLoyalty": false,
+      "ticketSize": 30,
+      "date": "2021-05-10"
+    },
+    {
+      "id": 3,
+      "hasLoyalty": true,
+      "ticketSize": 19,
+      "date": "2021-05-10"
+    },
+    {
+      "id": 4,
+      "hasLoyalty": false,
+      "ticketSize": 5,
+      "date": "2021-09-10"
+    },
+    {
+      "id": 5,
+      "hasLoyalty": false,
+      "ticketSize": 20,
+      "date": "2022-05-10"
+    },
+    {
+      "id": 5,
+      "hasLoyalty": true,
+      "ticketSize": 7,
+      "date": "2022-05-10"
+    },
+    {
+      "id": 6,
+      "hasLoyalty": false,
+      "ticketSize": 15,
+      "date": "2022-09-10"
+    },
+    {
+      "id": 7,
+      "hasLoyalty": false,
+      "ticketSize": 50,
+      "date": "2022-12-10"
+    },
+    {
+      "id": 7,
+      "hasLoyalty": true,
+      "ticketSize": 18,
+      "date": "2022-12-10"
+    },
+    {
+      "id": 8,
+      "hasLoyalty": false,
+      "ticketSize": 22,
+      "date": "2023-05-10"
+    },
+    {
+      "id": 9,
+      "hasLoyalty": false,
+      "ticketSize": 19,
+      "date": "2023-09-10"
+    },
+    {
+      "id": 10,
+      "hasLoyalty": false,
+      "ticketSize": 3,
+      "date": "2023-12-10"
+    },
+    {
+      "id": 11,
+      "hasLoyalty": false,
+      "ticketSize": 7,
+      "date": "2023-12-10"
+    }
+  ]
+}
