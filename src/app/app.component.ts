@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import Chart from 'chart.js/auto';
 import { ChartComponent } from './chart/chart.component';
+import customerData from '../../userData.json';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,5 @@ import { ChartComponent } from './chart/chart.component';
 })
 export class AppComponent {
   title = 'topmango-graph';
-
-  onButtonClick(): void {
-    console.log('test');
-  }
+  customerData = customerData;
 }

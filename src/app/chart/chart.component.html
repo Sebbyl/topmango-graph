@@ -1,11 +1,11 @@
-<div class="chart-container m-3 border rounded">
+<div class="chart-container m-3 border rounded" style="width: 85vw">
   <div
     class="border-bottom p-3 d-flex flex-row justify-content-between"
     style="height: auto"
   >
     <div class="d-flex flex-column">
       <h1>Total Sales</h1>
-      <span>Looking at a period of {{ startDate }} - {{ endDate }}</span>
+      <span>Looking at a period from {{ startDate }} - {{ endDate }}</span>
     </div>
     <div class="d-flex flex-row">
       <div class="d-flex flex-column px-3">
@@ -25,23 +25,29 @@
           <label for="dateRange">Date Range</label>
           <select
             id="dateRange"
-            (change)="updateChartDate($event)"
+            (change)="updateChartDate()"
             style="height: 2rem"
+            [(ngModel)]="selectedDateOption"
           >
-            <option value="-1">All Time</option>
+            <option default value="-1">All Time</option>
             <option value="1">Last Month</option>
             <option value="4">Last Quarter</option>
             <option value="12">Last Year</option>
-            <option value="custom">Custom</option>
+            <option value="-2">Custom</option>
           </select>
         </div>
         <div class="d-flex flex-row">
-          <div class="d-flex flex-column px-2" style="width: 7rem">
-            <label for="customRange">Pick Range</label>
-            <input id="customRange" placeholder="Months" style="height: 2rem" />
+          <div class="d-flex flex-column px-2" style="width: 8rem">
+            <label for="customRange">Custom Range</label>
+            <input
+              id="customRange"
+              placeholder="Last X Months"
+              style="height: 2rem"
+              [(ngModel)]="customDateValue"
+            />
           </div>
           <div class="align-content-end">
-            <button class="btn btn-primary">Search</button>
+            <button (click)="onSearch()" class="btn btn-primary">Search</button>
           </div>
         </div>
       </div>
@@ -51,7 +57,11 @@
         >
       </div>
     </div>
-
-    <canvas #MyChart></canvas>
+    <div
+      class="chart-container"
+      style="position: relative; height: 70vh; width: 85vw"
+    >
+      <canvas #MyChart></canvas>
+    </div>
   </div>
 </div>

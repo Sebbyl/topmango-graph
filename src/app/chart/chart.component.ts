@@ -1,6 +1,11 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  Input,
+} from '@angular/core';
 import { Chart } from 'chart.js/auto';
-import customerData from '../../../userData.json';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +23,12 @@ type AverageSales = {
 })
 export class ChartComponent implements AfterViewInit {
   @ViewChild('MyChart') chartContainer!: ElementRef;
+  @Input() customerData: any;
+
   public chart: any;
+
+  selectedDateOption: string = '-1';
+  customDateValue: string = '';
 
   endDate: string = '';
   startDate: string = '';
@@ -29,13 +39,24 @@ export class ChartComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     Chart.register(zoomPlugin);
     this.setDates(
-      new Date(customerData.customers[0].date),
-      new Date(customerData.customers[customerData.customers.length - 1].date)
+      new Date(this.customerData.customers[0].date),
+      new Date(
+        this.customerData.customers[this.customerData.customers.length - 1].date
+      )
     );
-    this.setTotals(customerData.customers);
+    this.setTotals(this.customerData.customers);
     this.createChart();
   }
 
+  //Custom date search
+  onSearch(): void {
+    if (this.customDateValue !== '' && Number(this.customDateValue) > 0) {
+      this.selectedDateOption = '-2';
+      this.updateChartDate();
+    }
+  }
+
+  //Calculates, and set totals for all customers, and loyalty customers in the picked date range
   setTotals(data: any): void {
     let allCustomersTotal = 0;
     let loyaltyCustomersTotal = 0;
@@ -51,6 +72,7 @@ export class ChartComponent implements AfterViewInit {
     this.loyaltyCustomersTotal = loyaltyCustomersTotal;
   }
 
+  //sets the start. amd end dates displayed in the chart
   setDates(start: Date, end: Date): void {
     this.startDate = `${start.toLocaleString('default', {
       month: 'long',
@@ -61,6 +83,7 @@ export class ChartComponent implements AfterViewInit {
     })} ${end.getDate().toString()} ${end.getFullYear().toString()}`;
   }
 
+  //creates an array of dates with no duplicates based on data given
   mergeDates(data: any): string[] {
     let mergedDates: string[] = [];
     data.forEach((val: any) => {
@@ -71,6 +94,7 @@ export class ChartComponent implements AfterViewInit {
     return mergedDates;
   }
 
+  //get all averages per date
   getAverages(data: any): {
     allCustomers: AverageSales[];
     loyaltyCustomers: (AverageSales | null)[];
@@ -123,13 +147,17 @@ export class ChartComponent implements AfterViewInit {
     };
   }
 
-  updateChartDate(event: Event): void {
-    const months = (event.target as HTMLSelectElement).value;
-    let data = customerData.customers;
-    const averages = this.getAverages(customerData.customers);
-    if (Number(months) !== -1) {
+  //Updates chart time range, alongside new average calculations
+  updateChartDate(): void {
+    let data = this.customerData.customers;
+    const averages = this.getAverages(this.customerData.customers);
+
+    if (Number(this.selectedDateOption) >= 0) {
+      this.customDateValue = '';
       const updatedDate = new Date();
-      updatedDate.setMonth(updatedDate.getMonth() - Number(months));
+      updatedDate.setMonth(
+        updatedDate.getMonth() - Number(this.selectedDateOption)
+      );
 
       data = data.filter((customer: any) => {
         const customerDate = new Date(customer.date);
@@ -137,12 +165,39 @@ export class ChartComponent implements AfterViewInit {
       });
       this.setDates(
         new Date(updatedDate),
-        new Date(customerData.customers[customerData.customers.length - 1].date)
+        new Date(
+          this.customerData.customers[
+            this.customerData.customers.length - 1
+          ].date
+        )
       );
-    } else if (Number(months) === -1) {
+    } else if (Number(this.selectedDateOption) === -1) {
+      this.customDateValue = '';
       this.setDates(
-        new Date(customerData.customers[0].date),
-        new Date(customerData.customers[customerData.customers.length - 1].date)
+        new Date(this.customerData.customers[0].date),
+        new Date(
+          this.customerData.customers[
+            this.customerData.customers.length - 1
+          ].date
+        )
+      );
+    } else {
+      const updatedDate = new Date();
+      console.log(this.customDateValue);
+      updatedDate.setMonth(
+        updatedDate.getMonth() - Number(this.customDateValue)
+      );
+      data = data.filter((customer: any) => {
+        const customerDate = new Date(customer.date);
+        return customerDate > updatedDate;
+      });
+      this.setDates(
+        new Date(updatedDate),
+        new Date(
+          this.customerData.customers[
+            this.customerData.customers.length - 1
+          ].date
+        )
       );
     }
     this.setTotals(data);
@@ -157,13 +212,15 @@ export class ChartComponent implements AfterViewInit {
     this.chart.update();
   }
 
+  //resets the zoom to default
   resetZoom(): void {
     this.chart.resetZoom();
   }
 
+  //Chart creation
   createChart(): void {
     const ctx = this.chartContainer.nativeElement.getContext('2d');
-    const averages = this.getAverages(customerData.customers);
+    const averages = this.getAverages(this.customerData.customers);
 
     const allCustomersGradient = ctx.createLinearGradient(0, 0, 0, 450);
     allCustomersGradient.addColorStop(0, 'blue');
@@ -177,7 +234,7 @@ export class ChartComponent implements AfterViewInit {
       type: 'line',
 
       data: {
-        labels: this.mergeDates(customerData.customers),
+        labels: this.mergeDates(this.customerData.customers),
         datasets: [
           {
             label: 'All Customers',
@@ -200,6 +257,7 @@ export class ChartComponent implements AfterViewInit {
       options: {
         aspectRatio: 2.5,
         responsive: true,
+        maintainAspectRatio: true,
         plugins: {
           zoom: {
             pan: {
