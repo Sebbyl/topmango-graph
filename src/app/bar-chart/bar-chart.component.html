@@ -1,0 +1,50 @@
+<div class="chart-container m-3 border rounded" style="width: 85%">
+  <div class="border-bottom p-3 d-flex flex-row justify-content-between">
+    <div class="d-flex flex-column">
+      <h1>{{ title }}</h1>
+      <span>Looking at a period from {{ startDate }} - {{ endDate }}</span>
+    </div>
+  </div>
+  <div class="d-flex flex-column p-3">
+    <div class="d-flex flex-row pb-5 pt-2">
+      <div class="d-flex flex-column px-3" style="width: 50%">
+        <h2>${{ inStoreTotal }}</h2>
+        <div class="d-flex flex-row">
+          <div
+            style="
+              margin-right: 0.3rem;
+              align-self: center;
+              height: 1rem;
+              width: 1rem;
+              background-color: blue;
+              border-radius: 5px;
+            "
+          ></div>
+          <span>In-Store</span>
+        </div>
+      </div>
+      <div class="d-flex flex-column px-3">
+        <h2>${{ onlineTotal }}</h2>
+        <div class="d-flex flex-row">
+          <div
+            style="
+              margin-right: 0.3rem;
+              align-self: center;
+              height: 1rem;
+              width: 1rem;
+              background-color: limegreen;
+              border-radius: 5px;
+            "
+          ></div>
+          <span>Online</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="chart-container"
+      style="position: relative; height: auto; width: 80vw"
+    >
+      <canvas #MyChart></canvas>
+    </div>
+  </div>
+</div>

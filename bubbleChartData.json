@@ -1,0 +1,11 @@
+{
+  "charts": [
+    {
+      "chartId": 1,
+      "averageTicketSizes": {
+        "AllCustomersAverageTicketSize": 22.98,
+        "LoyaltyAverageTicketSize": 27.01
+      }
+    }
+  ]
+}

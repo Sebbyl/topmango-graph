@@ -1,6 +1,19 @@
 <main class="main">
   @for(customers of customerData.charts; track customers.chartId){
-  <app-chart [customerData]="customers"></app-chart>
+  <app-line-chart
+    [customerData]="customers"
+    [title]="'Total Sales'"
+  ></app-line-chart>
+  } @for(customers of barChartData.charts; track customers.chartId){
+  <app-bar-chart
+    [customerData]="customers"
+    [title]="'Sales Channel Breakdown'"
+  ></app-bar-chart>
+  } @for(customers of bubbleChartData.charts; track customers.chartId){
+  <app-bubble-chart
+    [customerData]="customers"
+    [title]="'Average Ticket Size'"
+  ></app-bubble-chart>
   }
 </main>
 
