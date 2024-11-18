@@ -1,9 +1,57 @@
-<div class="chart-container">
-  <select (change)="updateChartDate($event)">
-    <option value="-1">All Time</option>
-    <option value="1">Last Month</option>
-    <option value="4">Last Quarter</option>
-    <option value="12">Last Year</option>
-  </select>
-  <canvas #MyChart></canvas>
+<div class="chart-container m-3 border rounded">
+  <div
+    class="border-bottom p-3 d-flex flex-row justify-content-between"
+    style="height: auto"
+  >
+    <div class="d-flex flex-column">
+      <h1>Total Sales</h1>
+      <span>Looking at a period of {{ startDate }} - {{ endDate }}</span>
+    </div>
+    <div class="d-flex flex-row">
+      <div class="d-flex flex-column px-3">
+        <h2>${{ allCustomersTotal }}</h2>
+        <div>All Customers</div>
+      </div>
+      <div class="d-flex flex-column px-3">
+        <h2>${{ loyaltyCustomersTotal }}</h2>
+        <div>Loyalty Customers</div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column p-3">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="d-flex flex-row">
+        <div class="d-flex flex-column px-2" style="width: 10rem">
+          <label for="dateRange">Date Range</label>
+          <select
+            id="dateRange"
+            (change)="updateChartDate($event)"
+            style="height: 2rem"
+          >
+            <option value="-1">All Time</option>
+            <option value="1">Last Month</option>
+            <option value="4">Last Quarter</option>
+            <option value="12">Last Year</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column px-2" style="width: 7rem">
+            <label for="customRange">Pick Range</label>
+            <input id="customRange" placeholder="Months" style="height: 2rem" />
+          </div>
+          <div class="align-content-end">
+            <button class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </div>
+      <div class="align-content-end">
+        <Button class="btn btn-primary" (click)="resetZoom()"
+          >Reset Zoom</Button
+        >
+      </div>
+    </div>
+
+    <canvas #MyChart></canvas>
+  </div>
 </div>
