@@ -6,8 +6,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 import customerData from '../../userData.json';
 import { CommonModule } from '@angular/common';
 import barChartData from '../../barChartData.json';
-import bubbleChartData from '../../bubbleChartData.json';
-import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
+import pieChartData from '../../pieChartData.json';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,7 @@ import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
     LineChartComponent,
     CommonModule,
     BarChartComponent,
-    BubbleChartComponent,
+    PieChartComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -26,5 +26,5 @@ export class AppComponent {
   title = 'topmango-graph';
   customerData = customerData;
   barChartData = barChartData;
-  bubbleChartData = bubbleChartData;
+  pieChartData = pieChartData;
 }

@@ -261,11 +261,9 @@ export class LineChartComponent implements AfterViewInit {
             label: 'All Customers',
             data: saleTotalByDate.allCustomers.map((val: any) => val.total),
             borderColor: 'blue',
+            backgroundColor: allCustomersGradient,
             spanGaps: true,
-            fill: {
-              target: 'origin',
-              above: allCustomersGradient,
-            },
+            fill: true,
             order: 2,
           },
           {
@@ -273,12 +271,10 @@ export class LineChartComponent implements AfterViewInit {
             data: saleTotalByDate.loyaltyCustomers.map(
               (val: any) => val?.total
             ),
+            backgroundColor: loyaltyCustomersGradient,
             borderColor: 'limegreen',
             spanGaps: true,
-            fill: {
-              target: 'origin',
-              above: loyaltyCustomersGradient,
-            },
+            fill: true,
             order: 1,
           },
         ],

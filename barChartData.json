@@ -3,126 +3,35 @@
     {
       "chartId": 1,
       "customers": [
-        {
-          "id": 1,
-          "inStore": false,
-          "ticketPrice": 100,
-          "date": "2021-01-15"
-        },
-        {
-          "id": 2,
-          "inStore": false,
-          "ticketPrice": 105,
-          "date": "2021-03-10"
-        },
-        {
-          "id": 3,
-          "inStore": false,
-          "ticketPrice": 110,
-          "date": "2021-05-10"
-        },
-        {
-          "id": 4,
-          "inStore": true,
-          "ticketPrice": 115,
-          "date": "2021-05-10"
-        },
-        {
-          "id": 5,
-          "inStore": false,
-          "ticketPrice": 120,
-          "date": "2021-09-10"
-        },
-        {
-          "id": 6,
-          "inStore": true,
-          "ticketPrice": 125,
-          "date": "2022-01-15"
-        },
-        {
-          "id": 7,
-          "inStore": false,
-          "ticketPrice": 130,
-          "date": "2022-05-10"
-        },
-        {
-          "id": 8,
-          "inStore": true,
-          "ticketPrice": 135,
-          "date": "2022-05-10"
-        },
-        {
-          "id": 9,
-          "inStore": false,
-          "ticketPrice": 140,
-          "date": "2022-09-10"
-        },
-        {
-          "id": 10,
-          "inStore": false,
-          "ticketPrice": 145,
-          "date": "2022-12-10"
-        },
-        {
-          "id": 11,
-          "inStore": true,
-          "ticketPrice": 150,
-          "date": "2022-12-10"
-        },
-        {
-          "id": 12,
-          "inStore": false,
-          "ticketPrice": 155,
-          "date": "2023-05-10"
-        },
-        {
-          "id": 13,
-          "inStore": true,
-          "ticketPrice": 160,
-          "date": "2023-05-10"
-        },
-        {
-          "id": 14,
-          "inStore": false,
-          "ticketPrice": 165,
-          "date": "2023-09-10"
-        },
-        {
-          "id": 15,
-          "inStore": false,
-          "ticketPrice": 170,
-          "date": "2023-12-10"
-        },
-        {
-          "id": 16,
-          "inStore": false,
-          "ticketPrice": 175,
-          "date": "2023-12-10"
-        },
-        {
-          "id": 17,
-          "inStore": true,
-          "ticketPrice": 180,
-          "date": "2023-03-10"
-        },
-        {
-          "id": 18,
-          "inStore": false,
-          "ticketPrice": 185,
-          "date": "2023-07-25"
-        },
-        {
-          "id": 19,
-          "inStore": false,
-          "ticketPrice": 190,
-          "date": "2024-02-05"
-        },
-        {
-          "id": 20,
-          "inStore": true,
-          "ticketPrice": 195,
-          "date": "2024-05-10"
-        }
+        { "id": 1, "inStore": true, "ticketPrice": 150, "date": "2021-01-15" },
+        { "id": 2, "inStore": false, "ticketPrice": 75, "date": "2021-03-10" },
+        { "id": 3, "inStore": false, "ticketPrice": 100, "date": "2021-05-10" },
+        { "id": 4, "inStore": true, "ticketPrice": 95, "date": "2021-07-05" },
+        { "id": 5, "inStore": false, "ticketPrice": 120, "date": "2021-09-10" },
+        { "id": 6, "inStore": true, "ticketPrice": 140, "date": "2021-11-15" }
+      ]
+    },
+    {
+      "chartId": 2,
+      "customers": [
+        { "id": 1, "inStore": true, "ticketPrice": 160, "date": "2022-01-20" },
+        { "id": 2, "inStore": false, "ticketPrice": 110, "date": "2022-03-12" },
+        { "id": 3, "inStore": false, "ticketPrice": 95, "date": "2022-05-14" },
+        { "id": 4, "inStore": false, "ticketPrice": 85, "date": "2022-07-16" },
+        { "id": 5, "inStore": true, "ticketPrice": 130, "date": "2022-09-18" },
+        { "id": 6, "inStore": false, "ticketPrice": 70, "date": "2022-11-20" },
+        { "id": 7, "inStore": true, "ticketPrice": 180, "date": "2022-12-25" }
+      ]
+    },
+    {
+      "chartId": 3,
+      "customers": [
+        { "id": 1, "inStore": true, "ticketPrice": 175, "date": "2023-01-30" },
+        { "id": 2, "inStore": false, "ticketPrice": 65, "date": "2023-03-25" },
+        { "id": 3, "inStore": true, "ticketPrice": 155, "date": "2023-05-28" },
+        { "id": 4, "inStore": false, "ticketPrice": 85, "date": "2023-07-30" },
+        { "id": 5, "inStore": false, "ticketPrice": 115, "date": "2023-09-05" },
+        { "id": 6, "inStore": true, "ticketPrice": 190, "date": "2023-11-10" }
       ]
     }
   ]

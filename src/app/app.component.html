@@ -9,11 +9,11 @@
     [customerData]="customers"
     [title]="'Sales Channel Breakdown'"
   ></app-bar-chart>
-  } @for(customers of bubbleChartData.charts; track customers.chartId){
-  <app-bubble-chart
+  } @for(customers of pieChartData.charts; track customers.chartId){
+  <app-pie-chart
     [customerData]="customers"
     [title]="'Average Ticket Size'"
-  ></app-bubble-chart>
+  ></app-pie-chart>
   }
 </main>
 

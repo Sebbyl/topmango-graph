@@ -6,17 +6,16 @@ import {
   Input,
 } from '@angular/core';
 import { Chart } from 'chart.js/auto';
-import zoomPlugin from 'chartjs-plugin-zoom';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-bubble-chart',
+  selector: 'app-pie-chart',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './bubble-chart.component.html',
-  styleUrl: './bubble-chart.component.css',
+  templateUrl: './pie-chart.component.html',
+  styleUrl: './pie-chart.component.css',
 })
-export class BubbleChartComponent implements AfterViewInit {
+export class PieChartComponent implements AfterViewInit {
   @ViewChild('MyChart') chartContainer!: ElementRef;
   @Input() customerData: any;
   @Input() title: string | undefined;

@@ -3,126 +3,54 @@
     {
       "chartId": 1,
       "customers": [
-        {
-          "id": 1,
-          "hasLoyalty": false,
-          "price": 100,
-          "date": "2021-01-15"
-        },
-        {
-          "id": 2,
-          "hasLoyalty": false,
-          "price": 105,
-          "date": "2021-03-10"
-        },
-        {
-          "id": 3,
-          "hasLoyalty": false,
-          "price": 110,
-          "date": "2021-05-10"
-        },
-        {
-          "id": 4,
-          "hasLoyalty": true,
-          "price": 115,
-          "date": "2021-05-10"
-        },
-        {
-          "id": 5,
-          "hasLoyalty": false,
-          "price": 120,
-          "date": "2021-09-10"
-        },
-        {
-          "id": 6,
-          "hasLoyalty": true,
-          "price": 125,
-          "date": "2022-01-15"
-        },
-        {
-          "id": 7,
-          "hasLoyalty": false,
-          "price": 130,
-          "date": "2022-05-10"
-        },
-        {
-          "id": 8,
-          "hasLoyalty": true,
-          "price": 135,
-          "date": "2022-05-10"
-        },
-        {
-          "id": 9,
-          "hasLoyalty": false,
-          "price": 140,
-          "date": "2022-09-10"
-        },
-        {
-          "id": 10,
-          "hasLoyalty": false,
-          "price": 145,
-          "date": "2022-12-10"
-        },
-        {
-          "id": 11,
-          "hasLoyalty": true,
-          "price": 150,
-          "date": "2022-12-10"
-        },
-        {
-          "id": 12,
-          "hasLoyalty": false,
-          "price": 155,
-          "date": "2023-05-10"
-        },
-        {
-          "id": 13,
-          "hasLoyalty": true,
-          "price": 160,
-          "date": "2023-05-10"
-        },
-        {
-          "id": 14,
-          "hasLoyalty": false,
-          "price": 165,
-          "date": "2023-09-10"
-        },
-        {
-          "id": 15,
-          "hasLoyalty": false,
-          "price": 170,
-          "date": "2023-12-10"
-        },
-        {
-          "id": 16,
-          "hasLoyalty": false,
-          "price": 175,
-          "date": "2023-12-10"
-        },
-        {
-          "id": 17,
-          "hasLoyalty": true,
-          "price": 180,
-          "date": "2023-03-10"
-        },
-        {
-          "id": 18,
-          "hasLoyalty": false,
-          "price": 185,
-          "date": "2023-07-25"
-        },
-        {
-          "id": 19,
-          "hasLoyalty": false,
-          "price": 190,
-          "date": "2024-02-05"
-        },
-        {
-          "id": 20,
-          "hasLoyalty": true,
-          "price": 195,
-          "date": "2024-05-10"
-        }
+        { "id": 1, "hasLoyalty": true, "price": 75, "date": "2022-01-15" },
+        { "id": 2, "hasLoyalty": true, "price": 65, "date": "2022-01-15" },
+        { "id": 3, "hasLoyalty": false, "price": 150, "date": "2022-04-10" },
+        { "id": 4, "hasLoyalty": false, "price": 135, "date": "2022-04-10" },
+        { "id": 5, "hasLoyalty": true, "price": 95, "date": "2022-07-10" },
+        { "id": 6, "hasLoyalty": true, "price": 85, "date": "2022-07-10" },
+        { "id": 7, "hasLoyalty": false, "price": 100, "date": "2022-10-05" },
+        { "id": 8, "hasLoyalty": false, "price": 125, "date": "2022-10-05" },
+        { "id": 9, "hasLoyalty": true, "price": 120, "date": "2023-01-15" },
+        { "id": 10, "hasLoyalty": true, "price": 110, "date": "2023-01-15" },
+        { "id": 11, "hasLoyalty": false, "price": 140, "date": "2023-04-10" },
+        { "id": 12, "hasLoyalty": false, "price": 160, "date": "2023-04-10" }
+      ]
+    },
+    {
+      "chartId": 2,
+      "customers": [
+        { "id": 1, "hasLoyalty": true, "price": 110, "date": "2022-02-20" },
+        { "id": 2, "hasLoyalty": false, "price": 155, "date": "2022-02-20" },
+        { "id": 3, "hasLoyalty": false, "price": 160, "date": "2022-05-18" },
+        { "id": 4, "hasLoyalty": true, "price": 75, "date": "2022-05-18" },
+        { "id": 5, "hasLoyalty": true, "price": 85, "date": "2022-08-14" },
+        { "id": 6, "hasLoyalty": false, "price": 145, "date": "2022-08-14" },
+        { "id": 7, "hasLoyalty": true, "price": 95, "date": "2022-11-22" },
+        { "id": 8, "hasLoyalty": false, "price": 170, "date": "2022-11-22" },
+        { "id": 9, "hasLoyalty": true, "price": 130, "date": "2023-02-18" },
+        { "id": 10, "hasLoyalty": true, "price": 125, "date": "2023-02-18" },
+        { "id": 11, "hasLoyalty": false, "price": 180, "date": "2023-05-25" },
+        { "id": 12, "hasLoyalty": false, "price": 175, "date": "2023-05-25" },
+        { "id": 13, "hasLoyalty": true, "price": 105, "date": "2023-08-30" },
+        { "id": 14, "hasLoyalty": false, "price": 145, "date": "2023-11-20" }
+      ]
+    },
+    {
+      "chartId": 3,
+      "customers": [
+        { "id": 1, "hasLoyalty": true, "price": 65, "date": "2022-03-10" },
+        { "id": 2, "hasLoyalty": true, "price": 60, "date": "2022-03-10" },
+        { "id": 3, "hasLoyalty": false, "price": 175, "date": "2022-06-25" },
+        { "id": 4, "hasLoyalty": false, "price": 165, "date": "2022-06-25" },
+        { "id": 5, "hasLoyalty": true, "price": 85, "date": "2022-09-05" },
+        { "id": 6, "hasLoyalty": true, "price": 90, "date": "2022-09-05" },
+        { "id": 7, "hasLoyalty": false, "price": 155, "date": "2022-12-12" },
+        { "id": 8, "hasLoyalty": false, "price": 145, "date": "2022-12-12" },
+        { "id": 9, "hasLoyalty": true, "price": 115, "date": "2023-03-10" },
+        { "id": 10, "hasLoyalty": false, "price": 190, "date": "2023-06-10" },
+        { "id": 11, "hasLoyalty": true, "price": 105, "date": "2023-09-10" },
+        { "id": 12, "hasLoyalty": false, "price": 180, "date": "2023-12-10" }
       ]
     }
   ]
