@@ -33,7 +33,6 @@ export class BarChartComponent implements AfterViewInit {
   inStoreTotal!: number;
 
   ngAfterViewInit(): void {
-    console.log(this.customerData);
     this.inStoreTotal = this.getInStoreTotal(this.customerData.customers);
     this.onlineTotal = this.getOnlineTotal(this.customerData.customers);
     Chart.register(zoomPlugin);
@@ -89,7 +88,7 @@ export class BarChartComponent implements AfterViewInit {
         datasets: [
           {
             data: [this.inStoreTotal, this.onlineTotal],
-            backgroundColor: ['blue', 'limegreen'],
+            backgroundColor: ['#e0b95c', '#72d4ce'],
             borderWidth: 1,
             borderRadius: 10,
           },

@@ -59,7 +59,6 @@ export class LineChartComponent implements AfterViewInit {
 
   //Calculates, and set totals for all customers, and loyalty customers in the picked date range
   setTotals(data: any): void {
-    console.log(data);
     let allCustomersTotal = 0;
     let loyaltyCustomersTotal = 0;
 
@@ -96,7 +95,7 @@ export class LineChartComponent implements AfterViewInit {
     return mergedDates;
   }
 
-  //get all averages per date
+  //get all totals per date
   getSaleTotalByDate(data: any): {
     allCustomers: TotalSales[];
     loyaltyCustomers: (TotalSales | null)[];
@@ -128,36 +127,6 @@ export class LineChartComponent implements AfterViewInit {
         loyaltySum === 0 ? null : { date: key, total: loyaltySum }
       );
     }
-
-    // for (const key in groupedByDate) {
-    //   let sum: number = 0;
-    //   groupedByDate[key].forEach((val) => {
-    //     sum += val.ticketSize;
-    //   });
-    //   averageAllSales.push({
-    //     date: key,
-    //     average: sum / groupedByDate[key].length,
-    //   });
-    // }
-
-    // for (const key in groupedByDate) {
-    //   let sum: number = 0;
-    //   let loyaltyCount: number = 0;
-    //   groupedByDate[key].forEach((val) => {
-    //     if (val.hasLoyalty) {
-    //       sum += val.ticketSize;
-    //       loyaltyCount++;
-    //     }
-    //   });
-    //   if (sum !== 0) {
-    //     averageLoyaltySales.push({
-    //       date: key,
-    //       average: sum / loyaltyCount,
-    //     });
-    //   } else {
-    //     averageLoyaltySales.push(null);
-    //   }
-    // }
 
     return {
       allCustomers: allSales,
@@ -244,11 +213,11 @@ export class LineChartComponent implements AfterViewInit {
     );
 
     const allCustomersGradient = ctx.createLinearGradient(0, 0, 0, 450);
-    allCustomersGradient.addColorStop(0, 'blue');
+    allCustomersGradient.addColorStop(0, '#e0b95c');
     allCustomersGradient.addColorStop(1, 'white');
 
     const loyaltyCustomersGradient = ctx.createLinearGradient(0, 0, 0, 450);
-    loyaltyCustomersGradient.addColorStop(0, 'limegreen');
+    loyaltyCustomersGradient.addColorStop(0, '#72d4ce');
     loyaltyCustomersGradient.addColorStop(1, 'white');
 
     this.lineChart = new Chart(ctx, {
@@ -260,7 +229,7 @@ export class LineChartComponent implements AfterViewInit {
           {
             label: 'All Customers',
             data: saleTotalByDate.allCustomers.map((val: any) => val.total),
-            borderColor: 'blue',
+            borderColor: '#e0b95c',
             backgroundColor: allCustomersGradient,
             spanGaps: true,
             fill: true,
@@ -272,7 +241,7 @@ export class LineChartComponent implements AfterViewInit {
               (val: any) => val?.total
             ),
             backgroundColor: loyaltyCustomersGradient,
-            borderColor: 'limegreen',
+            borderColor: '#72d4ce',
             spanGaps: true,
             fill: true,
             order: 1,

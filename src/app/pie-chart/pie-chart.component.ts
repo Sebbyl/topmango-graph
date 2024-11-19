@@ -51,7 +51,7 @@ export class PieChartComponent implements AfterViewInit {
                 .AllCustomersAverageTicketSize,
               this.customerData.averageTicketSizes.LoyaltyAverageTicketSize,
             ],
-            backgroundColor: ['blue', 'limegreen'],
+            backgroundColor: ['#e0b95c', '#72d4ce'],
             borderWidth: 1,
           },
         ],
